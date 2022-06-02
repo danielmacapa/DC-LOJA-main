@@ -1,5 +1,6 @@
 <?php
-
+include "layout/topo.php";
+include "layout/rodape.php";
 include "classes/cliente.php";
 include "classes/funcionario.php";
 include "classes/produto.php";

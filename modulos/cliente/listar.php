@@ -2,14 +2,26 @@
 
 $objetos = Cliente::listar();
 
-foreach($objetos as $cliente){
-    $id = $cliente->getId();
-    $nome = $cliente->getNome();
-    $endereco = $cliente->getEndereco();
-    $cpf = $cliente->getCpf();
-    $telefone = $cliente->getTelefone();
-
-    echo $id, $nome, $endereco, $cpf, $telefone;
-}
-
 ?>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>ENDEREÇO</th>
+        <th>CPF</th>
+        <th>TELEFONE</th>
+    </tr>
+    <?php
+    foreach($objetos as $cliente){
+    
+        echo "<tr>";
+        echo "<td>".$cliente->getId()."</td>";
+        echo "<td>".$cliente->getNome()."</td>";
+        echo "<td>".$cliente->getEndereco()."</td>";
+        echo "<td>".$cliente->getCpf()."</td>";
+        echo "<td>".$cliente->getTelefone()."</td>";
+        echo "</tr>";
+    }
+    ?>
+</table>

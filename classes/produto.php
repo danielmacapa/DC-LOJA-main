@@ -1,6 +1,6 @@
 <?php
 
-include "db.php";
+include_once "db.php";
 
 class Produto{
     protected $id;
@@ -13,15 +13,14 @@ class Produto{
     public function __construct($id = false){
         if($id){
             $sql = "SELECT * FROM produto WHERE id = ?";
-        }
-
+        
         try{
             $con = DB::conexao();
             $stmt = $con->prepare($sql);
         }catch(PDOException $e){
             echo "Erro na consulta de Produto: ".$e->getMessage();
         }
-
+        }
     }
     
 

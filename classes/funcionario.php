@@ -1,6 +1,6 @@
 <?php
 
-include "db.php";
+include_once "db.php";
 
 class Funcionario{
     protected $id;
@@ -12,15 +12,14 @@ class Funcionario{
     public function __construct($id = false){
         if($id){
             $sql = "SELECT * FROM funcionario WHERE id = ?";
-        }
-
+        
         try{
             $con = DB::conexao();
             $stmt = $con->prepare($sql);
         }catch(PDOException $e){
             echo "Erro na consulta de Funcionário: ".$e->getMessage();
         }
-
+        }
     }
     
 
